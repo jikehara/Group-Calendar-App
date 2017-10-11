@@ -10,7 +10,7 @@ import NavBar from './components/navigation/NavBar'
 
 const App = () =>
   <BrowserRouter>
-    <div>
+    <div style={{marginTop: 64}}>
       <NavBar />
       <Switch>
         <Route path='/' exact component={Home}  />

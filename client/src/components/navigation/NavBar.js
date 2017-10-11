@@ -1,11 +1,13 @@
 import React from 'react'
-// import AppBar from 'material-ui/AppBar'
+import AppBar from 'material-ui/AppBar'
+import Toolbar from 'material-ui/Toolbar'
 // import Typography from 'material-ui/Typography'
 // import Button from 'material-ui/Button'
 import {NavLink} from 'react-router-dom'
 
 const NavBar = (onClick) =>
-    <nav>
+  <AppBar position='fixed'>
+    <Toolbar>
       <NavLink
         to='/'>Home
       </NavLink>
@@ -16,6 +18,7 @@ const NavBar = (onClick) =>
       <NavLink to='/signup'>Signup</NavLink>
       <NavLink to='/logout'>Logout</NavLink>
       <NavLink to='/shared-calendar'>Your Calendar</NavLink>
-    </nav>
+    </Toolbar>
+  </AppBar>
 
 export default NavBar
