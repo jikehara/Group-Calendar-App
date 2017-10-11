@@ -5,7 +5,6 @@ import React from 'react'
 import {NavLink} from 'react-router-dom'
 
 const NavBar = (onClick) =>
-  <div>
     <nav>
       <NavLink
         to='/'>Home
@@ -16,8 +15,7 @@ const NavBar = (onClick) =>
       <NavLink to='/login'>Login</NavLink>
       <NavLink to='/signup'>Signup</NavLink>
       <NavLink to='/logout'>Logout</NavLink>
-      <NavLink to='/your-calendar'>Your Calendar</NavLink>
+      <NavLink to='/shared-calendar'>Your Calendar</NavLink>
     </nav>
-  </div>
 
 export default NavBar
