@@ -1,7 +1,16 @@
-import React, {Component} from 'react'
+import {Component} from 'react'
 import * as ServerApi from '../../lib/serverApi'
+import PropTypes from 'prop-types'
 
 class UserProvider extends Component {
+  static propTypes = {
+    children: PropTypes.node.isRequired
+  }
+
+  static childContextTypes = {
+    userData: PropTypes.object
+  }
+
   state = {
     user: null
   }
@@ -19,10 +28,17 @@ class UserProvider extends Component {
         })
   }
 
+  getChildContext () {
+    return {
+      userData: {
+        ...this.state,
+        ...this.methods
+      }
+    }
+  }
+
   render () {
-    return (
-      <div> hello </div>
-    )
+    return this.props.children
   }
 }
 

@@ -6,19 +6,22 @@ import SignUp from './components/authorization/SignUpContainer'
 import SharedCalendar from './components/calendar/SharedCalendar'
 import About from './components/About'
 import NavBar from './components/navigation/NavBar'
+import UserProvider from './components/providers/UserProvider'
 
 const App = () =>
   <BrowserRouter>
-    <div style={{paddingTop: 64}}>
-      <NavBar />
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/login' component={LogIn} />
-        <Route path='/signup' component={SignUp} />
-        <Route path='/shared-calendar' component={SharedCalendar} />
-        <Route path='/about' component={About} />
-      </Switch>
-    </div>
+    <UserProvider>
+      <div style={{paddingTop: 64}}>
+        <NavBar />
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/login' component={LogIn} />
+          <Route path='/signup' component={SignUp} />
+          <Route path='/shared-calendar' component={SharedCalendar} />
+          <Route path='/about' component={About} />
+        </Switch>
+      </div>
+    </UserProvider>
   </BrowserRouter>
 
 export default App

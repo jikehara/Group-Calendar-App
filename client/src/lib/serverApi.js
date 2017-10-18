@@ -1,4 +1,4 @@
-const ajaxRequest = (uri, method, body) => {
+const ajaxRequest = (method, uri, body) => {
   const headers = new Headers({
     'Content-Type': 'application/json'
   })
@@ -29,10 +29,10 @@ const handleErrors = response => {
   return response
 }
 
-export const signUpUser = (user) => ajaxRequest('POST', '/api/signup', user)
+export const signUpUser = (user) => ajaxRequest('POST', 'signup', user)
 
-export const logInUser = (username, password) => ajaxRequest('POST', '/api/login', {username, password})
+export const logInUser = (username, password) => ajaxRequest('POST', 'login', {username, password})
 
-export const getUser = () => ajaxRequest('GET', '/api/get_user')
+export const getUser = () => ajaxRequest('GET', 'get_user')
 
-export const logoutUser = () => ajaxRequest('GET', '/api/logout')
+export const logoutUser = () => ajaxRequest('GET', 'logout')

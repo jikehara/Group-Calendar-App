@@ -18,8 +18,17 @@ class AbstractContainer extends Component {
     }
   }
 
-  validateForm = () =>
-    true
+  validateForm = () => true
+
+  onSubmit = () => {
+    console.log('submitted the form from AbstractContainer')
+  } // subclass overrides this
+
+  onFormSubmit = (event) => {
+    console.log('submitted the form')
+    event.preventDefault()
+    this.onSubmit()
+  }
 
   onInputChanged = (event) =>
     this.setState({
@@ -28,7 +37,11 @@ class AbstractContainer extends Component {
 
   render () {
     const WrappedComponent = this.WrappedComponent
-    return <WrappedComponent {...this.state} onInputChanged={this.onInputChanged} />
+    return <WrappedComponent
+      {...this.state}
+      onInputChanged={this.onInputChanged}
+      onSubmit={this.onFormSubmit}
+    />
   }
 }
 

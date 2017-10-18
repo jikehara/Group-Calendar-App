@@ -7,12 +7,13 @@ import PropTypes from 'prop-types'
 
 const propTypes = {
   onInputChanged: PropTypes.func.isRequired,
-  isFormValid: PropTypes.bool.isRequired
+  isFormValid: PropTypes.bool.isRequired,
+  onSubmit: PropTypes.func.isRequired
 }
 
 const LogIn = (props) =>
   <Well>
-    <form>
+    <form onSubmit={props.onSubmit}>
       <VerticalForm>
         <TextField
           id='username'
@@ -30,6 +31,7 @@ const LogIn = (props) =>
           color='primary'
           raised
           disabled={!props.isFormValid}
+          type='submit'
         >Log In</Button>
       </VerticalForm>
     </form>
