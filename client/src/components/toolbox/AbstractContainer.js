@@ -4,13 +4,16 @@ class AbstractContainer extends Component {
   constructor (props, WrappedComponent) {
     super(props)
     this.WrappedComponent = WrappedComponent
+    this.state = {
+      isFormValid: false
+    }
   }
 
   componentDidUpdate () {
-    const isFormValid = this.validateForm()
+    const isFormValid = Boolean(this.validateForm())
     if (this.state.isFormValid !== isFormValid) {
-      this.setState({
-        isFormValid: this.validateForm()
+      this.setState({ // eslint-disable-line react/no-did-update-set-state
+        isFormValid
       })
     }
   }

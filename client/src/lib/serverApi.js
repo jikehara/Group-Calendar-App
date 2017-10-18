@@ -28,3 +28,11 @@ const handleErrors = response => {
   }
   return response
 }
+
+export const signUpUser = (user) => ajaxRequest('POST', '/api/signup', user)
+
+export const logInUser = (username, password) => ajaxRequest('POST', '/api/login', {username, password})
+
+export const getUser = () => ajaxRequest('GET', '/api/get_user')
+
+export const logoutUser = () => ajaxRequest('GET', '/api/logout')

@@ -1,7 +1,7 @@
 import React from 'react'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import Home from './components/Home'
-import LogIn from './components/authorization/LogIn'
+import LogIn from './components/authorization/LogInContainer'
 import SignUp from './components/authorization/SignUpContainer'
 import SharedCalendar from './components/calendar/SharedCalendar'
 import About from './components/About'
